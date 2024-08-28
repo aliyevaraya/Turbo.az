@@ -127,18 +127,18 @@
         <div class="desktop_main_top hidden md:block">
           <div class="flex justify-between items-center flex-wrap mt-[30px]">
             <select
-            id="markaSelect"
+              onchange="getMarka()"
+              id="markaSelect"
               class="px-2 py-3 w-[22%] rounded-[10px] border text-[#aaa]"
             >
-              <option value="">Marka</option>
+              <option value="default">Marka</option>
             </select>
             <select
-            id="modelSelect"
+              onchange="getModel()"
+              id="modelSelect"
               class="px-2 py-3 w-[22%] rounded-[10px] border text-[#aaa]"
             >
-              <option value="">Model</option>
-              <option value="">Acura</option>
-              <option value="">ATV</option>
+              <option value="default">Model</option>
             </select>
             <div class="flex text-[#aaa] w-[18vw]">
               <span
@@ -151,10 +151,11 @@
               >
             </div>
             <select
-            id="citySelect"
+              onchange="getCity()"
+              id="citySelect"
               class="p-x2 py-3 w-[22%] rounded-[10px] border text-[#aaa]"
             >
-              <option value="">Şəhər</option>
+              <option value="default">Şəhər</option>
             </select>
           </div>
           <div class="flex justify-between items-center flex-wrap mt-2">

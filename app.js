@@ -831,22 +831,27 @@ const data = [
 
 const cards = document.getElementById("cards");
 
-for (let i = 0; i < data.length; i++) {
-  let car = data[i];
-  cards.innerHTML += `
-  <div class="card h-[350px] lg:w-[23.3%] md:w-[25%] shadow-md my-[20px] mx-2">
-    <img class="h-[200px] w-full rounded-[10px] object-cover" src="${
-      car.images
-    }" alt="car photo" />
-    <div class="px-2">
-      <h4 class="font-bold my-3 text-[20px]">${car.price} ${car.currency}</h4>
-      <h5>${car.brand} ${car.model}</h5>
-      <p>${car.year}, ${car.engine}, ${car.odometer + car.odometerUnit}</p>
-      <p class="text-[12px] text-[#333]">${car.city}, bugün 10:37</p>
+function getCars(data) {
+  cards.innerHTML = "";
+  for (let i = 0; i < data.length; i++) {
+    let car = data[i];
+    cards.innerHTML += `
+    <div class="card h-[350px] lg:w-[23.3%] md:w-[25%] shadow-md my-[20px] mx-2">
+      <img class="h-[200px] w-full rounded-[10px] object-cover" src="${
+        car.images
+      }" alt="car photo" />
+      <div class="px-2">
+        <h4 class="font-bold my-3 text-[20px]">${car.price} ${car.currency}</h4>
+        <h5>${car.brand} ${car.model}</h5>
+        <p>${car.year}, ${car.engine}, ${car.odometer + car.odometerUnit}</p>
+        <p class="text-[12px] text-[#333]">${car.city}, bugün 10:37</p>
+      </div>
     </div>
-  </div>
-`;
+  `;
+  }
 }
+
+getCars(data);
 
 const markaSelect = document.getElementById("markaSelect");
 const modelSelect = document.getElementById("modelSelect");
@@ -873,12 +878,43 @@ const bar = Array.from(barSet);
 for (let i = 0; i < marka.length; i++) {
   markaSelect.innerHTML += `<option>${marka[i]}</option>`;
 }
-for (let i = 0; i < marka.length; i++) {
+for (let i = 0; i < model.length; i++) {
   modelSelect.innerHTML += `<option>${model[i]}</option>`;
 }
-for (let i = 0; i < marka.length; i++) {
+for (let i = 0; i < city.length; i++) {
   citySelect.innerHTML += `<option>${city[i]}</option>`;
 }
 for (let i = 0; i < bar.length; i++) {
   barSelect.innerHTML += `<option>${bar[i]}</option>`;
+}
+
+function getMarka() {
+  let cars = [];
+  const marka = markaSelect.value;
+  if (marka == "default") {
+    cars = data;
+  } else {
+    data.map((item) => (item.brand == marka ? cars.push(item) : ""));
+  }
+  getCars(cars);
+}
+function getModel() {
+  let cars = [];
+  const model = modelSelect.value;
+  if (model == "default") {
+    cars = data;
+  } else {
+    data.map((item) => (item.model == model ? cars.push(item) : ""));
+  }
+  getCars(cars);
+}
+function getCity() {
+  let cars = [];
+  const city = citySelect.value;
+  if (city == "default") {
+    cars = data;
+  } else {
+    data.map((item) => (item.city == city ? cars.push(item) : ""));
+  }
+  getCars(cars);
 }
