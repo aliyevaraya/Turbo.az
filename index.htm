@@ -34,8 +34,8 @@
         ></a>
       </div>
       <div class="desktop md:block hidden">
-        <div class="bg-[#f6f7fa] p-2">
-          <div class="flex justify-between max-w-[1000px] m-auto">
+        <div class="bg-[#f6f7fa] p-3">
+          <div class="flex justify-between container m-auto">
             <ul class="flex gap-4 text-[#8d94ad]">
               <li><a href="#">Tap.az</a></li>
               <li><a href="#">Bina.az</a></li>
@@ -52,7 +52,7 @@
         </div>
         <div class="px-2 py-4 bg-[red] text-white">
           <div
-            class="flex justify-between items-center gap-4 max-w-[1000px] m-auto"
+            class="flex justify-between items-center gap-4 container m-auto"
           >
             <ul class="flex justify-between items-center gap-[2vw]">
               <li>
@@ -75,7 +75,7 @@
         </div>
       </div>
     </header>
-    <main class="bg-[#f2f2f2] py-3">
+    <main class="bg-[#f2f2f2] py-3 px-3">
       <div class="mobile_main_top md:hidden">
         <div class="bg-white mx-4 p-2 rounded-[10px] mb-4">
           <div
@@ -123,18 +123,18 @@
           <a class="border-b border-[#b1b5c7]" href="#">İcarə</a>
         </div>
       </div>
-      <div class="max-w-[1000px] m-auto">
+      <div class="container m-auto">
         <div class="desktop_main_top hidden md:block">
-          <div class="flex justify-between items-center mt-[30px]">
+          <div class="flex justify-between items-center flex-wrap mt-[30px]">
             <select
-              class="px-2 py-3 w-[18vw] rounded-[10px] border text-[#aaa]"
+            id="markaSelect"
+              class="px-2 py-3 w-[22%] rounded-[10px] border text-[#aaa]"
             >
               <option value="">Marka</option>
-              <option value="">Acura</option>
-              <option value="">ATV</option>
             </select>
             <select
-              class="px-2 py-3 w-[18vw] rounded-[10px] border text-[#aaa]"
+            id="modelSelect"
+              class="px-2 py-3 w-[22%] rounded-[10px] border text-[#aaa]"
             >
               <option value="">Model</option>
               <option value="">Acura</option>
@@ -151,56 +151,54 @@
               >
             </div>
             <select
-              class="p-x2 py-3 w-[18vw] rounded-[10px] border text-[#aaa]"
+            id="citySelect"
+              class="p-x2 py-3 w-[22%] rounded-[10px] border text-[#aaa]"
             >
               <option value="">Şəhər</option>
-              <option value="">Ağcabedi</option>
-              <option value="">Ağdaş</option>
             </select>
           </div>
-          <div class="flex justify-between items-center mt-4">
+          <div class="flex justify-between items-center flex-wrap mt-2">
             <div class="flex">
               <input
-                class="px-2 py-3 w-[11vw] rounded-l-[10px] text-[#aaa] border"
+                class="max-w-[120px] px-2 py-3 rounded-l-[10px] text-[#aaa] border"
                 type="number"
                 placeholder="Qiymət, min."
               />
               <input
-                class="px-2 py-3 w-[9vw] rounded-r-[10px] text-[#aaa] border"
+                class="max-w-[120px] px-2 py-3 rounded-r-[10px] text-[#aaa] border"
                 type="number"
                 placeholder="maks."
               />
             </div>
-            <select class="px-2 py-3 w-[8vw] rounded-[10px] border">
+            <select class="px-2 py-3 rounded-[10px] border">
               <option value="">AZN</option>
               <option value="">USD</option>
               <option value="">EURO</option>
             </select>
-            <div class="flex gap-4">
-              <button class="px-2 py-3 w-[8vw] rounded-[10px] bg-white border">
+            <div class="flex gap-2 w-[22%]">
+              <button class="px-2 py-3 w-1/2 rounded-[10px] bg-white border">
                 Barter
               </button>
-              <button class="px-2 py-3 w-[8vw] rounded-[10px] bg-white border">
+              <button class="px-2 py-3 w-1/2 rounded-[10px] bg-white border">
                 Kredit
               </button>
             </div>
             <select
-              class="px-2 py-3 w-[18vw] rounded-[10px] text-[#aaa] border"
+            id="barSelect"
+              class="px-2 py-3 w-[22%] rounded-[10px] text-[#aaa] border"
             >
               <option value="">Bar növü</option>
-              <option value="">Avtobus</option>
-              <option value="">Furqon</option>
             </select>
-            <div class="flex">
+            <div class="flex w-[22%] my-2">
               <select
-                class="px-2 py-3 w-[9vw] rounded-l-[10px] text-[#aaa] border"
+                class="w-1/2 px-2 py-3 rounded-l-[10px] text-[#aaa] border"
               >
                 <option value="">İl, min.</option>
                 <option value="">2024</option>
                 <option value="">2023</option>
               </select>
               <select
-                class="px-2 py-3 w-[9vw] rounded-r-[10px] text-[#aaa] border"
+                class="px-2 py-3 w-1/2 rounded-r-[10px] text-[#aaa] border"
               >
                 <option value="">maks.</option>
                 <option value="">2022</option>
@@ -223,7 +221,7 @@
     </main>
     <footer class="bg-[#f6f7fa]">
       <div class="footer_top text-[#8d94ad] px-2 py-[30px]">
-        <div class="flex flex-col md:flex-row justify-between max-w-[1000px] m-auto">
+        <div class="flex flex-col md:flex-row justify-between container m-auto">
           <a href="#">Qaydalar </a>
           <a href="#">İstifadəçi razılaşması</a>
           <a href="#">Reklam yerləşdirin</a>
@@ -260,7 +258,7 @@
         </p>
       </div>
       <div class="hidden gap-5 bg-[red] text-white p-3 text-[12px] md:block">
-        <div class="max-w-[1000px] m-auto items-center flex justify-between">
+        <div class="container m-auto items-center flex justify-between">
           <p>
             Saytın Administrasiyası reklam bannerlərinin və yerləşdirilmiş
             elanların məzmununa görə məsuliyyət daşımır.

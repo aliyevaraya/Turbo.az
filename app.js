@@ -834,12 +834,51 @@ const cards = document.getElementById("cards");
 for (let i = 0; i < data.length; i++) {
   let car = data[i];
   cards.innerHTML += `
-  <div class="card px-2 h-[300px]">
-    <img class="h-[150px] w-[180px] rounded-[10px] object-cover" src="${car.images}" alt="car photo" />
-    <h4 class="font-bold">${car.price} ${car.currency}</h4>
-    <h5>${car.brand} ${car.model}</h5>
-    <p>${car.year}, ${car.engine}, ${ car.odometer + car.odometerUnit}</p>
-    <p class="text-[12px] text-[#333]">${car.city}, bugün 10:37</p>
+  <div class="card h-[350px] lg:w-[23.3%] md:w-[25%] shadow-md my-[20px] mx-2">
+    <img class="h-[200px] w-full rounded-[10px] object-cover" src="${
+      car.images
+    }" alt="car photo" />
+    <div class="px-2">
+      <h4 class="font-bold my-3 text-[20px]">${car.price} ${car.currency}</h4>
+      <h5>${car.brand} ${car.model}</h5>
+      <p>${car.year}, ${car.engine}, ${car.odometer + car.odometerUnit}</p>
+      <p class="text-[12px] text-[#333]">${car.city}, bugün 10:37</p>
+    </div>
   </div>
 `;
+}
+
+const markaSelect = document.getElementById("markaSelect");
+const modelSelect = document.getElementById("modelSelect");
+const citySelect = document.getElementById("citySelect");
+const barSelect = document.getElementById("barSelect");
+
+const markaSet = new Set();
+const modelSet = new Set();
+const citySet = new Set();
+const barSet = new Set();
+
+for (let i = 0; i < data.length; i++) {
+  markaSet.add(data[i].brand);
+  modelSet.add(data[i].model);
+  citySet.add(data[i].city);
+  barSet.add(data[i].banType);
+}
+
+const marka = Array.from(markaSet);
+const model = Array.from(modelSet);
+const city = Array.from(citySet);
+const bar = Array.from(barSet);
+
+for (let i = 0; i < marka.length; i++) {
+  markaSelect.innerHTML += `<option>${marka[i]}</option>`;
+}
+for (let i = 0; i < marka.length; i++) {
+  modelSelect.innerHTML += `<option>${model[i]}</option>`;
+}
+for (let i = 0; i < marka.length; i++) {
+  citySelect.innerHTML += `<option>${city[i]}</option>`;
+}
+for (let i = 0; i < bar.length; i++) {
+  barSelect.innerHTML += `<option>${bar[i]}</option>`;
 }
